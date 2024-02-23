@@ -1,0 +1,27 @@
+extends ../layout/index
+
+block contenido
+  div(class="py-10")
+    h1(class="text-4xl my-10 font-extrabold text-center") Bienes
+      span(class="font-normal") Raices
+    h2(class="text-center text-2xl font-extrabold")=pagina
+
+    div(class="mt-8 mx-auto max-w-md")
+      .div(class="bg-white py-8 px-4 shadow")
+        form(class="space-y-5")
+          div 
+            label.block.text-sm.uppercase.text-gray-500.mb-2.font-bold(for="nombre") Tu Nombre
+            input#nombre(class="w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400")(placeholder="Tu Nombre" type="text" name="nombre")
+          div 
+            label.block.text-sm.uppercase.text-gray-500.mb-2.font-bold(for="email") Tu Email
+            input#email(class="w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400")(placeholder="Tu Email" type="email" name="email")
+          div 
+            label.block.text-sm.uppercase.text-gray-500.mb-2.font-bold(for="password") Tu Password
+            input#password(class="w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400")(placeholder="Tu Password" type="password" name="password")
+          div 
+            label.block.text-sm.uppercase.text-gray-500.mb-2.font-bold(for="repetir_password") Repetir Password
+            input#repetir_password(class="w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400")(placeholder="Repite Tu Password" type="password" name="repetir_password")
+          div(class="flex items-center justify-between")   
+            a(class="text-gray-500  text-xs" href="/auth/login") Ya tienes cuenta? Inicia Sesion
+            a(class="text-gray-500 text-xs" href="/auth/olvide-password") Olvide mi Password
+          input(type="Submit" value="Crear Cuenta" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 cursor-pointer")
