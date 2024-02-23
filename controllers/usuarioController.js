@@ -8,11 +8,18 @@ const formularioRegistro = (req, res) => {
     pagina: "Crear Cuenta",
   });
 };
-
+const registrar = (req, res) => {
+  console.log(req.body);
+};
 const formularioOlvidePassword = (req, res) => {
   res.render("auth/olvide-password", {
     pagina: "Recupera Tu Acceso a Bienes Raices",
   });
 };
 
-export { formularioLogin, formularioRegistro, formularioOlvidePassword };
+export {
+  formularioLogin,
+  formularioRegistro,
+  formularioOlvidePassword,
+  registrar,
+};
