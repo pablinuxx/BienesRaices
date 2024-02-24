@@ -5,12 +5,16 @@ import db from "./config/db.js";
 //Creo la app
 const app = express();
 
+//Habilitarlectura de datos en formulario
+app.use(express.urlencoded({ extended: true }));
+
 //Conexion a la BD
 try {
   await db.authenticate();
+  db.sync(); //crear las tablas en la BD
   console.log("Conexion correcta a la BD");
 } catch (error) {
-  console.log("error");
+  console.log(`error: ${error}`);
 }
 //Habilitar Pug
 app.set("view engine", "pug");
